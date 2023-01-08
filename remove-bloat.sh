@@ -6,6 +6,10 @@ sudo apt-get remove --purge wolfram-engine libreoffice* scratch* minecraft-pi so
 # Autoremove
 sudo apt-get autoremove -y
 
+# Install packages
+sudo apt install npm
+curl -fsSL https://code-server.dev/install.sh | sh
+
 # Clean
 sudo apt-get autoclean -y
 
