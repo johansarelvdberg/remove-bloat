@@ -18,14 +18,14 @@ The script will then `autoremove`, `autoclean` and then `update` the aptitude pa
 Run the following command within the Raspberry Pi terminal:
 
 ```bash
-sudo curl -fsSL https://raw.githubusercontent.com/raspberrycoulis/remove-bloat/master/remove-bloat.sh | bash
+sudo curl -fsSL https://raw.githubusercontent.com/johansarelvdberg/remove-bloat/master/remove-bloat.sh | bash
 ```
 
 ### Manual
 If the automatic method does not work, you can manually download the repository and run the script after making it executable.
 
 ```bash
-git clone git://github.com/raspberrycoulis/remove-bloat.git
+git clone git://github.com/johansarelvdberg/remove-bloat.git
 cd remove-bloat
 sudo chmod +x remove-bloat.sh
 sudo ./remove-bloat.sh
