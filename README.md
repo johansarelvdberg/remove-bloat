@@ -30,3 +30,48 @@ cd remove-bloat
 sudo chmod +x remove-bloat.sh
 sudo ./remove-bloat.sh
 ```
+
+
+# Pi setup for development
+
+Based on "Getting started with Pashberry Pi Pico"
+
+## Step 1
+Install basic tools as in chapter 1:
+```bash
+sudo apt update
+sudo apt install automake git autoconf build-essential texinfo libtool libftdi-dev libusb-1.0-0-dev libusb-1.0-0-dev
+ 
+wget https://raw.githubusercontent.com/raspberrypi/pico-setup/master/pico_setup.sh
+chmod +x pico_setup.sh
+./pico_setup.sh
+sudo reboot
+```
+
+## Step 2
+Get the sdk and exmaples:
+```bash
+git clone https://github.com/raspberrypi/pico-sdk.git --branch master
+cd pico-sdk
+git submodule update --init
+cd ..
+git clone https://github.com/raspberrypi/pico-examples.git --branch master
+```
+Install the chain tools"
+```bash
+sudo apt install cmake gcc-arm-none-eabi libnewlib-arm-none-eabi
+sudo apt install build-essential libstdc++-arm-none-eabi-newlib libusb-1.0-0-dev
+cd pico-sdk
+git pull
+git submodule update
+```
+
+
+## Step 3
+
+Compile process see readme of `https://github.com/raspberrypi/pico-sdk`.
+
+Use picotool to load binary to Pico, see `https://github.com/raspberrypi/picotool`
+
+Unplug Pico, hold boot select down and plugin in Pico to enable storage mode. Run ` sudo picotool info -a`
+to get info about Pico.
